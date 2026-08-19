@@ -8,10 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Kai Yang, HITSZ, UESTC, Trustworthy AI, POI Recommendation">
     <meta name="description" content="Kai Yang's personal homepage">
-
     <link rel="icon" type="image/png" href="image/uestc_icon.jpg">
     
-    <!-- 对标参考站的 jemdoc 风格样式 -->
     <style type="text/css">
         body {
             background-color: white;
@@ -20,38 +18,31 @@
             margin: 0;
             padding: 0;
         }
-
         #layout-content {
             width: 960px;
             margin: 25px auto;
             padding: 0 20px;
             text-align: left;
         }
-
         h1, h2, h3 {
             font-weight: normal;
             color: #222222;
             margin-top: 30px;
             margin-bottom: 10px;
         }
-
         h2 {
             font-size: 24px;
             border-bottom: 1px solid #dddddd;
             padding-bottom: 5px;
         }
-
         a {
             color: #1772d0;
             text-decoration: none;
         }
-
         a:hover {
             color: #f09228;
             text-decoration: none;
         }
-
-        /* 头部个人信息 */
         .profile_header {
             display: flex;
             justify-content: space-between;
@@ -59,69 +50,55 @@
             gap: 40px;
             margin-bottom: 10px;
         }
-
         .profile_info h1 {
             font-size: 32px;
             margin: 0 0 8px 0;
         }
-
         .profile_info .title {
             font-size: 18px;
             color: #555555;
             margin-bottom: 12px;
         }
-
         .profile_info p {
             font-size: 16px;
             line-height: 1.6;
             margin: 6px 0;
         }
-
         .profile_photo img {
             width: 220px;
             border-radius: 2px;
         }
-
-        /* 简介 */
         .bio p {
             font-size: 16px;
             line-height: 1.6;
             text-align: justify;
             margin: 8px 0;
         }
-
-        /* 新闻列表 */
         .news_list {
             list-style: none;
             padding-left: 0;
             font-size: 16px;
             line-height: 1.7;
         }
-
         .news_list li {
             padding-left: 18px;
             position: relative;
             margin-bottom: 4px;
         }
-
         .news_list li::before {
             content: "▸";
             position: absolute;
             left: 0;
             color: #888888;
         }
-
         .news_list strong {
             color: #333333;
             margin-right: 6px;
         }
-
         .show_button {
             margin-top: 8px;
             font-size: 15px;
         }
-
-        /* 论文卡片 */
         .publication_container {
             display: flex;
             gap: 20px;
@@ -129,69 +106,56 @@
             padding-bottom: 15px;
             border-bottom: 1px dotted #eeeeee;
         }
-
         .publication_image {
             flex-shrink: 0;
             width: 160px;
             text-align: center;
         }
-
         .publication_image img {
             max-width: 100%;
             max-height: 120px;
             border: 1px solid #eeeeee;
             border-radius: 3px;
         }
-
         .publication_title {
             flex: 1;
             font-size: 16px;
             line-height: 1.5;
         }
-
         .publication_title strong {
             font-size: 16px;
         }
-
         .publication_title em {
             color: #666666;
             font-size: 15px;
         }
-
         .publication_title p {
             margin-top: 6px;
             color: #444444;
             font-size: 15px;
             text-align: justify;
         }
-
-        /* 荣誉、服务、教学 */
         .section-list {
             list-style: none;
             padding-left: 0;
             font-size: 16px;
             line-height: 1.8;
         }
-
         .section-list li {
             padding-left: 18px;
             position: relative;
             margin-bottom: 4px;
         }
-
         .section-list li::before {
             content: "▪";
             position: absolute;
             left: 0;
             color: #333333;
         }
-
         .section-list .year {
             float: right;
             color: #555555;
         }
-
-        /* 页脚 */
         #footer {
             margin-top: 40px;
             text-align: center;
@@ -199,12 +163,9 @@
             color: #888888;
             padding-bottom: 20px;
         }
-
         #footer a {
             color: #888888;
         }
-
-        /* 响应式适配 */
         @media (max-width: 980px) {
             #layout-content {
                 width: auto;
@@ -224,13 +185,11 @@
         }
     </style>
 
-    <!-- 光标粒子特效（和参考站同款） -->
     <script type="module">
         import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
         new fairyDustCursor();
     </script>
 
-    <!-- 新闻展开收起脚本 -->
     <script type="text/javascript">
         function toggle_vis(id) {
             var elements = document.getElementsByClassName(id);
@@ -241,13 +200,21 @@
             }
             showText.innerHTML = isHidden ? "[Show less]" : "[Show more]";
         }
+
+        function toggle_pubs() {
+            var elements = document.getElementsByClassName("more_pubs");
+            var showText = document.getElementById("showPubsText");
+            var isHidden = elements[0].style.display === "none";
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = isHidden ? "flex" : "none";
+            }
+            showText.innerHTML = isHidden ? "[Show less]" : "[Show more]";
+        }
     </script>
 </head>
 
 <body>
 <div id="layout-content">
-
-    <!-- 头部个人信息 -->
     <div class="profile_header">
         <div class="profile_info">
             <h1>Kai Yang</h1>
@@ -271,7 +238,6 @@
         </div>
     </div>
 
-    <!-- 个人简介 -->
     <h2>Short Bio</h2>
     <div class="bio">
         <p>
@@ -284,17 +250,15 @@
         </p>
     </div>
 
-    <!-- 近期新闻 -->
     <h2>Recent News</h2>
     <ul class="news_list">
-        <li><strong>[2026/04]</strong> 1 paper submitted to ACM MM 2026.</li>
-        <li><strong>[2026/02]</strong> 2 papers submitted to SIGKDD 2026.</li>
+        <li><strong>[2026/08]</strong> 1 paper accepted by IEEE ICDM 2026.</li>
+        <li><strong>[2026/07]</strong> 1 papers submitted to SIGKDD 2027.</li>
+        <li><strong>[2026/06]</strong> 1 paper accepted by ACM MM 2026.</li>
         <li><strong>[2026/01]</strong> 1 paper submitted to ACM TOIS.</li>
         <li><strong>[2025/12]</strong> 1 paper submitted to ACM TKDD.</li>
         <li><strong>[2025/09]</strong> Joined HITSZ as a PhD Candidate.</li>
         <li><strong>[2025/06]</strong> Graduated from UESTC.</li>
-
-        <!-- 默认隐藏的更早新闻 -->
         <li class="more_news" style="display:none;"><strong>[2024/10]</strong> Received the National Scholarship.</li>
         <li class="more_news" style="display:none;"><strong>[2024/10]</strong> Received the First-class Scholarship of UESTC.</li>
         <li class="more_news" style="display:none;"><strong>[2024/04]</strong> ICASSP 2024 Presentation in Seoul, South Korea.</li>
@@ -308,8 +272,37 @@
         <a href="javascript:void(0)" id="showText" onclick="toggle_vis('more_news')">[Show more]</a>
     </div>
 
-    <!-- 论文列表 -->
     <h2>Selected Publications</h2>
+
+    <!-- SHAPE IEEE ICDM 2026 -->
+    <div class="publication_container">
+        <div class="publication_image">
+            <img src="project/SHAPE/model.png" alt="SHAPE">
+        </div>
+        <div class="publication_title">
+            <strong>SHAPE: Spatial Hyperbolic-Embedding Augmented Pretraining for Estimated Time of Arrival on Obfuscated Trajectories</strong><br>
+            Ruopu Li, Yong Chu, <strong>Kai Yang</strong>, James Jianqiao Yu, Lixia Wu, Xun Zhou<br>
+            <em>ICDM 2026, CCF-B</em>
+            <p>
+                SHAPE is a spatial hyperbolic-embedding augmented pretraining framework for estimated time of arrival on obfuscated trajectories, which learns robust route representations via differential geometric feature decomposition and hybrid Euclidean-hyperbolic contrastive self-supervised learning.
+            </p>
+        </div>
+    </div>
+
+    <!-- RoPOI ACM MM 2026 -->
+    <div class="publication_container">
+        <div class="publication_image">
+            <img src="project/RoPOI/model.png" alt="RoPOI">
+        </div>
+        <div class="publication_title">
+            <strong>RoPOI: Robust POI Recommendation based on Modality Disentanglement and Missing Representation Generation</strong><br>
+            <strong>Kai Yang</strong>, Xun Zhou<br>
+            <em>ACM MM 2026, CCF-A</em>
+            <p>
+                RoPOI is a robust point-of-interest recommendation framework built on modality disentanglement and missing representation generation, which mitigates performance degradation from modality absence while preserving discriminative modality-specific information.
+            </p>
+        </div>
+    </div>
 
     <!-- ExNext SIGIR 2024 -->
     <div class="publication_container">
@@ -323,7 +316,7 @@
             <strong>Kai Yang</strong>, Yi Yang, Qiang Gao, Ting Zhong, Yong Wang, Fan Zhou<br>
             <em>SIGIR 2024, CCF-A</em>
             <p>
-                We introduce ExNext, a novel framework for POI recommendation that improves trustworthiness by balancing accuracy and explainability, leveraging information theory to learn compact, informative representations.
+                ExNext is a self-explainable POI recommendation framework that improves trustworthiness by balancing accuracy and explainability, leveraging information theory to learn compact, informative representations.
             </p>
         </div>
     </div>
@@ -340,13 +333,13 @@
             <strong>Kai Yang</strong>, Wenxin Tai, Zhenhui Li, Ting Zhong, Guangqiang Yin, Yong Wang, Fan Zhou<br>
             <em>ICASSP 2024, CCF-B</em>
             <p>
-                We endow the IP geolocation model with explainability via variational graph information bottleneck, balancing concise explanation and informative representation.
+                ExGeo endows the IP geolocation model with explainability via a variational graph information bottleneck, balancing concise explanation and informative representation.
             </p>
         </div>
     </div>
 
     <!-- TCGeo AAAI 2024 -->
-    <div class="publication_container">
+    <div class="publication_container more_pubs" style="display:none;">
         <div class="publication_image">
             <img src="project/TCGeo/intro.jpg" alt="TCGeo">
         </div>
@@ -356,13 +349,13 @@
             <strong>Kai Yang</strong>, Jiayang Li, Wenxin Tai, Zhenhui Li, Ting Zhong, Guangqiang Yin, Yong Wang, Fan Zhou<br>
             <em>AAAI 2024, CCF-A</em>
             <p>
-                We propose a target-centric IP graph to mitigate sparsity, enhancing contextual information utilization in network topology for geolocation.
+                A target-centric IP graph is proposed to mitigate sparsity, enhancing contextual information utilization in network topology for geolocation.
             </p>
         </div>
     </div>
 
     <!-- LSGAT AAAI 2024 -->
-    <div class="publication_container">
+    <div class="publication_container more_pubs" style="display:none;">
         <div class="publication_image">
             <img src="project/LSGAT/model.jpg" alt="LSGAT">
         </div>
@@ -377,7 +370,10 @@
         </div>
     </div>
 
-    <!-- 荣誉 -->
+    <div class="show_button">
+        <a href="javascript:void(0)" id="showPubsText" onclick="toggle_pubs()">[Show more]</a>
+    </div>
+
     <h2>Honors</h2>
     <ul class="section-list">
         <li>National Scholarship of China <span class="year">2024</span></li>
@@ -386,7 +382,6 @@
         <li>3rd Place, China People's Net AI Algorithm Competition <span class="year">2023</span></li>
     </ul>
 
-    <!-- 学术服务 -->
     <h2>Services</h2>
     <ul class="section-list">
         <li>Conference Reviewer: ICLR, AAAI, KDD</li>
@@ -394,13 +389,11 @@
         <li>IEEE Student Member</li>
     </ul>
 
-    <!-- 教学经历 -->
     <h2>Teaching Experience</h2>
     <ul class="section-list">
         <li>Teaching Assistant (with Prof. Wang), UESTC <span class="year">2022</span></li>
     </ul>
 
-    <!-- 页脚 -->
     <div id="footer">
         <a href="shturl.cc/HZ8h0EaFyv275rr8ow">
             <img src="shturl.cc/HZ8h0EaFyv275rr8owcounter.php?hyson" border="0" alt="visitor counter">
@@ -412,7 +405,6 @@
         <br>
         Inspired by <a href="https://wxtai.github.io/">Wenxin Tai</a> and <a href="https://jonbarron.info/">Jon Barron</a>
     </div>
-
 </div>
 </body>
 </html>
