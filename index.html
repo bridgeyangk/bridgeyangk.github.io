@@ -1,298 +1,418 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>https://scholar.google.com/citations?user=tnNsrNgAAAAJ&hl=zh-CN Kai Yang</title>
-  <meta name="google-site-verification" content="Sz54Vh3X9DGH9Lq0nkAMFRQ8lYDkqFaiUMR5KcNpZwU" />
-  <meta name="author" content="Kai Yang">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="image/uestc_icon.jpg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kai Yang</title>
+    <meta name="google-site-verification" content="Sz54Vh3X9DGH9Lq0nkAMFRQ8lYDkqFaiUMR5KcNpZwU">
+    <meta name="author" content="Kai Yang">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Kai Yang, HITSZ, UESTC, Trustworthy AI, POI Recommendation">
+    <meta name="description" content="Kai Yang's personal homepage">
+
+    <link rel="icon" type="image/png" href="image/uestc_icon.jpg">
+    
+    <!-- 对标参考站的 jemdoc 风格样式 -->
+    <style type="text/css">
+        body {
+            background-color: white;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        #layout-content {
+            width: 960px;
+            margin: 25px auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        h1, h2, h3 {
+            font-weight: normal;
+            color: #222222;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 5px;
+        }
+
+        a {
+            color: #1772d0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #f09228;
+            text-decoration: none;
+        }
+
+        /* 头部个人信息 */
+        .profile_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 10px;
+        }
+
+        .profile_info h1 {
+            font-size: 32px;
+            margin: 0 0 8px 0;
+        }
+
+        .profile_info .title {
+            font-size: 18px;
+            color: #555555;
+            margin-bottom: 12px;
+        }
+
+        .profile_info p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 6px 0;
+        }
+
+        .profile_photo img {
+            width: 220px;
+            border-radius: 2px;
+        }
+
+        /* 简介 */
+        .bio p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            margin: 8px 0;
+        }
+
+        /* 新闻列表 */
+        .news_list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .news_list li {
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .news_list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #888888;
+        }
+
+        .news_list strong {
+            color: #333333;
+            margin-right: 6px;
+        }
+
+        .show_button {
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        /* 论文卡片 */
+        .publication_container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #eeeeee;
+        }
+
+        .publication_image {
+            flex-shrink: 0;
+            width: 160px;
+            text-align: center;
+        }
+
+        .publication_image img {
+            max-width: 100%;
+            max-height: 120px;
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+        }
+
+        .publication_title {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .publication_title strong {
+            font-size: 16px;
+        }
+
+        .publication_title em {
+            color: #666666;
+            font-size: 15px;
+        }
+
+        .publication_title p {
+            margin-top: 6px;
+            color: #444444;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* 荣誉、服务、教学 */
+        .section-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .section-list li {
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .section-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #333333;
+        }
+
+        .section-list .year {
+            float: right;
+            color: #555555;
+        }
+
+        /* 页脚 */
+        #footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #888888;
+            padding-bottom: 20px;
+        }
+
+        #footer a {
+            color: #888888;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 980px) {
+            #layout-content {
+                width: auto;
+                margin: 15px;
+            }
+            .profile_header {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .publication_container {
+                flex-direction: column;
+            }
+            .publication_image {
+                width: 100%;
+                margin: 0 auto 10px auto;
+            }
+        }
+    </style>
+
+    <!-- 光标粒子特效（和参考站同款） -->
+    <script type="module">
+        import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+        new fairyDustCursor();
+    </script>
+
+    <!-- 新闻展开收起脚本 -->
+    <script type="text/javascript">
+        function toggle_vis(id) {
+            var elements = document.getElementsByClassName(id);
+            var showText = document.getElementById("showText");
+            var isHidden = elements[0].style.display === "none";
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = isHidden ? "list-item" : "none";
+            }
+            showText.innerHTML = isHidden ? "[Show less]" : "[Show more]";
+        }
+    </script>
 </head>
 
-  <body>
-  <table width="950" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-     <td>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="67%" valign="middle">
-        <p align="center">
-          <name>Kai Yang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  <!-- <img style="vertical-align:middle" src='image/kaiyang_name.PNG' height='50px' width='WIDTHpx'> -->
-		  </name>
+<body>
+<div id="layout-content">
+
+    <!-- 头部个人信息 -->
+    <div class="profile_header">
+        <div class="profile_info">
+            <h1>Kai Yang</h1>
+            <div class="title">PhD Candidate</div>
+            <p>
+                <a href="https://www.hitsz.edu.cn/">Harbin Institute of Technology (Shenzhen)</a><br>
+                Supervisor: Prof. <a href="https://scholar.google.com/citations?user=WEoQSX0AAAAJ&hl=en&oi=sra">Xun Zhou</a><br>
+                IEEE Student Member (since 2023)
+            </p>
+            <p>
+                Research interests: Trustworthy AI, Spatial-temporal Recommendation System
+            </p>
+            <p>
+                Email: kaiyang.cs AT outlook.com<br>
+                [<a href="https://scholar.google.com/citations?hl=zh-CN&user=tnNsrNgAAAAJ">Google Scholar</a>]
+                [<a href="https://github.com/bridgeyangk">GitHub</a>]
+            </p>
+        </div>
+        <div class="profile_photo">
+            <img src="image/yk.png" alt="Kai Yang">
+        </div>
+    </div>
+
+    <!-- 个人简介 -->
+    <h2>Short Bio</h2>
+    <div class="bio">
+        <p>
+            I am currently a PhD student at Harbin Institute of Technology (Shenzhen) (HITSZ), supervised by Prof. Xun Zhou.
+            My research focuses on trustworthy AI and spatial-temporal recommendation systems.
         </p>
-		<p>Currently, I am a PHD student at  <a href="https://www.hitsz.edu.cn/"> Harbin Institute of Technology (ShenZhen)</a>, supervised by Prof. <a href="https://scholar.google.com/citations?user=WEoQSX0AAAAJ&hl=en&oi=sra">Xun Zhou</a>. In addition, I have been an IEEE student Member since 2023.
-
-      My research interests include but are not limited to Trustworthy AI, Spatial-temporal Recommendation System.
-		</p>
-		Before that, I obtained the bachelor's and master's degree in <a href="https://sise.uestc.edu.cn/">School of Information and Software Engineering</a> from <a href="https://en.uestc.edu.cn/">University of Electronic Science and Technology of China (UESTC)</a> in 2022 and 2025.
+        <p>
+            Before that, I received my B.Eng. and M.Eng. degrees from the School of Information and Software Engineering,
+            University of Electronic Science and Technology of China (UESTC) in 2022 and 2025, respectively.
         </p>
+    </div>
 
+    <!-- 近期新闻 -->
+    <h2>Recent News</h2>
+    <ul class="news_list">
+        <li><strong>[2026/04]</strong> 1 paper submitted to ACM MM 2026.</li>
+        <li><strong>[2026/02]</strong> 2 papers submitted to SIGKDD 2026.</li>
+        <li><strong>[2026/01]</strong> 1 paper submitted to ACM TOIS.</li>
+        <li><strong>[2025/12]</strong> 1 paper submitted to ACM TKDD.</li>
+        <li><strong>[2025/09]</strong> Joined HITSZ as a PhD Candidate.</li>
+        <li><strong>[2025/06]</strong> Graduated from UESTC.</li>
 
-        <p align=center>
-          Email: kaiyang.cs AT outlook.com &nbsp/&nbsp
-	  <a href="https://scholar.google.com/citations?hl=zh-CN&user=tnNsrNgAAAAJ">Google Scholar</a> &nbsp/&nbsp
-<!--           <a href="project/cv_kaiyang.pdf">CV</a> &nbsp/&nbsp -->
-          <a href="https://github.com/bridgeyangk">Github</a>
+        <!-- 默认隐藏的更早新闻 -->
+        <li class="more_news" style="display:none;"><strong>[2024/10]</strong> Received the National Scholarship.</li>
+        <li class="more_news" style="display:none;"><strong>[2024/10]</strong> Received the First-class Scholarship of UESTC.</li>
+        <li class="more_news" style="display:none;"><strong>[2024/04]</strong> ICASSP 2024 Presentation in Seoul, South Korea.</li>
+        <li class="more_news" style="display:none;"><strong>[2024/03]</strong> 1 paper accepted by SIGIR 2024.</li>
+        <li class="more_news" style="display:none;"><strong>[2023/12]</strong> 3rd place, China People's Net AI Algorithm Competition.</li>
+        <li class="more_news" style="display:none;"><strong>[2023/12]</strong> Received China Shenzhen Stock Exchange Scholarship.</li>
+        <li class="more_news" style="display:none;"><strong>[2023/11]</strong> 1 paper accepted by ICASSP 2024.</li>
+        <li class="more_news" style="display:none;"><strong>[2023/10]</strong> 2 papers accepted by AAAI 2024.</li>
+    </ul>
+    <div class="show_button">
+        <a href="javascript:void(0)" id="showText" onclick="toggle_vis('more_news')">[Show more]</a>
+    </div>
 
-        </p>
+    <!-- 论文列表 -->
+    <h2>Selected Publications</h2>
 
-        </td>
-        <td width="33%">
-        <img src="image/yk.png" class="cpic" width="220">
-        </td>
-      </tr>
-      </table>
+    <!-- ExNext SIGIR 2024 -->
+    <div class="publication_container">
+        <div class="publication_image">
+            <img src="project/ExNext/model.png" alt="ExNext">
+        </div>
+        <div class="publication_title">
+            <strong>ExNext: Self-Explainable Next POI Recommendation</strong>
+            [<a href="https://dl.acm.org/doi/pdf/10.1145/3626772.3657967">Paper</a>]
+            [<a href="https://github.com/bridgeyangk/ExNext">Code</a>]<br>
+            <strong>Kai Yang</strong>, Yi Yang, Qiang Gao, Ting Zhong, Yong Wang, Fan Zhou<br>
+            <em>SIGIR 2024, CCF-A</em>
+            <p>
+                We introduce ExNext, a novel framework for POI recommendation that improves trustworthiness by balancing accuracy and explainability, leveraging information theory to learn compact, informative representations.
+            </p>
+        </div>
+    </div>
 
+    <!-- ExGeo ICASSP 2024 -->
+    <div class="publication_container">
+        <div class="publication_image">
+            <img src="project/EXGeo/model.png" alt="ExGeo">
+        </div>
+        <div class="publication_title">
+            <strong>ExGeo: Exploring Self-Explainable Street-Level IP Geolocation with Graph Information Bottleneck</strong>
+            [<a href="https://ieeexplore.ieee.org/abstract/document/10447996">Paper</a>]
+            [<a href="https://github.com/ICDM-UESTC/ExGeo">Code</a>]<br>
+            <strong>Kai Yang</strong>, Wenxin Tai, Zhenhui Li, Ting Zhong, Guangqiang Yin, Yong Wang, Fan Zhou<br>
+            <em>ICASSP 2024, CCF-B</em>
+            <p>
+                We endow the IP geolocation model with explainability via variational graph information bottleneck, balancing concise explanation and informative representation.
+            </p>
+        </div>
+    </div>
 
-<p></p><p></p><p></p><p></p><p></p>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>🔥 Recent News</heading>
-          <p>
-	  <li> <strongsmall>[2026/04]</strongsmall> &nbsp;&nbsp;<smalll>1 paper submitted to ACM MM 2026.</smalll><br/>
-	  <li> <strongsmall>[2026/02]</strongsmall> &nbsp;&nbsp;<smalll>2 papers submitted to SIGKDD 2026.</smalll><br/>
-	  <li> <strongsmall>[2026/01]</strongsmall> &nbsp;&nbsp;<smalll>1 paper submitted to ACM TOIS.</smalll><br/>
-	  <li> <strongsmall>[2025/12]</strongsmall> &nbsp;&nbsp;<smalll>1 paper submitted to ACM TKDD.</smalll><br/>
-	  <li> <strongsmall>[2025/09]</strongsmall> &nbsp;&nbsp;<smalll>Joined HITSZ as a PhD Candidate.</smalll><br/>
-	  <li> <strongsmall>[2025/06]</strongsmall> &nbsp;&nbsp;<smalll>Graduated from UESTC.</smalll><br/>
-      <li> <strongsmall>[2024/10]</strongsmall> &nbsp;&nbsp;<smalll>Get the National Scholarship.</smalll><br/>
-      <li> <strongsmall>[2024/10]</strongsmall> &nbsp;&nbsp;<smalll>Get the First-class Scholarship of UESTC.</smalll><br/>
-      <li> <strongsmall>[2024/04]</strongsmall> &nbsp;&nbsp;<smalll>Conference ICASSP2024 Presentation in Seoul, South Korea.</smalll><br/>
-      <li> <strongsmall>[2024/03]</strongsmall> &nbsp;&nbsp;<smalll>1 paper accepted by SIGIR 2024.</smalll><br/>
-      <li> <strongsmall>[2023/12]</strongsmall> &nbsp;&nbsp;<smalll>China People's Net AI Algorithm Competition(3rd).</smalll><br/>
-      <li> <strongsmall>[2023/12]</strongsmall> &nbsp;&nbsp;<smalll>China Shenzhen Stock Exchange Scholarship.</smalll><br/>
-      <li> <strongsmall>[2023/11]</strongsmall> &nbsp;&nbsp;<smalll>1 paper accepted by ICASSP 2024.</smalll><br/>
-      <li> <strongsmall>[2023/10]</strongsmall> &nbsp;&nbsp;<smalll>2 papers accepted by AAAI 2024.</smalll><br/>
-          </p>
-        </td>
-      </tr>
-</table>
+    <!-- TCGeo AAAI 2024 -->
+    <div class="publication_container">
+        <div class="publication_image">
+            <img src="project/TCGeo/intro.jpg" alt="TCGeo">
+        </div>
+        <div class="publication_title">
+            <strong>TCGeo: Improving IP Geolocation With Target-Centric IP Graph (Student Abstract)</strong>
+            [<a href="https://drive.google.com/file/d/1qayLXEpNLdSlbGoTst847r5gXUp6BcdQ/view?usp=drive_link">Paper</a>]<br>
+            <strong>Kai Yang</strong>, Jiayang Li, Wenxin Tai, Zhenhui Li, Ting Zhong, Guangqiang Yin, Yong Wang, Fan Zhou<br>
+            <em>AAAI 2024, CCF-A</em>
+            <p>
+                We propose a target-centric IP graph to mitigate sparsity, enhancing contextual information utilization in network topology for geolocation.
+            </p>
+        </div>
+    </div>
 
+    <!-- LSGAT AAAI 2024 -->
+    <div class="publication_container">
+        <div class="publication_image">
+            <img src="project/LSGAT/model.jpg" alt="LSGAT">
+        </div>
+        <div class="publication_title">
+            <strong>LSGAT: Interpreting Temporal Knowledge Graph Reasoning (Student Abstract)</strong>
+            [<a href="https://drive.google.com/file/d/1ImUhgVkMv5C81vaafmy5OZgBbMWER7VD/view?usp=drive_link">Paper</a>]<br>
+            Bin Chen, <strong>Kai Yang</strong>, Wenxin Tai, Zhangtao Cheng, Leyuan Liu, Ting Zhong, Fan Zhou<br>
+            <em>AAAI 2024, CCF-A</em>
+            <p>
+                An interpretable temporal knowledge graph reasoning method with competitive prediction accuracy, which identifies pivotal historical events for explainability.
+            </p>
+        </div>
+    </div>
 
+    <!-- 荣誉 -->
+    <h2>Honors</h2>
+    <ul class="section-list">
+        <li>National Scholarship of China <span class="year">2024</span></li>
+        <li>First-class Scholarship of UESTC <span class="year">2024</span></li>
+        <li>China Shenzhen Stock Exchange Scholarship <span class="year">2023</span></li>
+        <li>3rd Place, China People's Net AI Algorithm Competition <span class="year">2023</span></li>
+    </ul>
 
+    <!-- 学术服务 -->
+    <h2>Services</h2>
+    <ul class="section-list">
+        <li>Conference Reviewer: ICLR, AAAI, KDD</li>
+        <li>Journal Reviewer: IEEE TKDE</li>
+        <li>IEEE Student Member</li>
+    </ul>
 
+    <!-- 教学经历 -->
+    <h2>Teaching Experience</h2>
+    <ul class="section-list">
+        <li>Teaching Assistant (with Prof. Wang), UESTC <span class="year">2022</span></li>
+    </ul>
 
-<p></p><p></p><p></p><p></p><p></p>
+    <!-- 页脚 -->
+    <div id="footer">
+        <a href="shturl.cc/HZ8h0EaFyv275rr8ow">
+            <img src="shturl.cc/HZ8h0EaFyv275rr8owcounter.php?hyson" border="0" alt="visitor counter">
+        </a>
+        <br>
+        <span>unique visitors since November 2023</span>
+        <br><br>
+        Last update: Aug 2026
+        <br>
+        Inspired by <a href="https://wxtai.github.io/">Wenxin Tai</a> and <a href="https://jonbarron.info/">Jon Barron</a>
+    </div>
 
-
-
-
-
-
-<p></p><p></p>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <!-- <heading>Publications<a href="https://scholar.google.com/citations?user=xxxxxxxxxxxxxxxxxxx" style="font-size:22px;">[Google Scholar]</a></heading> -->
-          <heading>📚 Publications</heading>
-        </td>
-      </tr>
-      </table>
-
-<!-- ExNext--SIGIR2024 -->
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-  <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
-    <td width="15%">
-      <img src='project/ExNext/model.png'  width="300" height="180">
-    </td>
-    <td valign="top" width="75%">
- <strong>ExNext: Self-Explainable Next POI Recommendation</strong>[<a href="https://dl.acm.org/doi/pdf/10.1145/3626772.3657967">Link</a>]<br>
-
- <strong>Kai Yang</strong>, Yi Yang,
- <a href="https://scholar.google.com/citations?hl=zh-CN&user=3KPOGeAAAAAJ">Qiang Gao</a>,
-   <a href="https://scholar.google.com/citations?user=Mdr0XDkAAAAJ&hl=en">Ting Zhong</a>, Yong Wang,
-   <a href="https://scholar.google.co.uk/citations?hl=zh-CN&user=Ihj2Rw8AAAAJ">Fan Zhou</a><br>
-      <strong>SIGIR, 2024, CCF-A</strong>.
-
-  <p></p>
-      <em>Area: POI Recommendation, Trustworthy, and Information Theory</em> <br>
-      <p></p>
-  <p>We introduce a novel framework called ExNext for Point of Interest (POI) recommendation in LBSNs, which focuses on improving the trustworthiness of recommender systems by enhancing both accuracy and explainability. Our framework utilizes information theory to learn a compact representation that balances knowledge compression with retaining relevant information.</p>
-    </td>
-  </tr>
- </table>	  
-
-<!-- EXGeo--ICASSP2024 -->
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-  <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
-    <td width="15%">
-      <img src='project/EXGeo/model.png'  width="300" height="100">
-    </td>
-    <td valign="top" width="75%">
- <strong>EXGeo: Exploring Self-Explainable Street-Level IP Geolocation with Graph Information Bottleneck</strong>[<a href="https://ieeexplore.ieee.org/abstract/document/10447996">Link</a>]<br>
-
- <strong>Kai Yang</strong>,
- <a href="https://scholar.google.com/citations?user=YyxocAIAAAAJ&hl=zh-CN">Wenxin Tai</a>,
-  Zhenhui Li,
-   <a href="https://scholar.google.com/citations?user=Mdr0XDkAAAAJ&hl=en">Ting Zhong</a>,
- Guangqiang Yin, Yong Wang,
-   <a href="https://scholar.google.co.uk/citations?hl=zh-CN&user=Ihj2Rw8AAAAJ">Fan Zhou</a><br>
-      <strong>ICASSP, 2024, CCF-B</strong>.
-
-  <p></p>
-      <em>Area: Geolocation, Explainability, and Information Bottleneck Theory.</em> <br>
-      <p></p>
-  <p>We endow the geolocation model with explainability through variational IB theory, which aims at striking a balance between knowledge compression (provid-ing concise explanations) and preserving pertinent information (offering informative representations).</p>
-    </td>
-  </tr>
- </table>
-
-<!-- TCGeo--AAAIsa2024 -->
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-  <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
-    <td width="15%">
-      <img src='project/TCGeo/intro.jpg'  width="300" height="120">
-    </td>
-    <td valign="top" width="75%">
- <strong>TCGeo: Improving IP Geolocation With Target-Centric IP Graph (Student Abstract)</strong>[<a href="https://drive.google.com/file/d/1qayLXEpNLdSlbGoTst847r5gXUp6BcdQ/view?usp=drive_link">Link</a>]<br>
-
- <strong>Kai Yang</strong>, Jiayang Li,
- <a href="https://scholar.google.com/citations?user=YyxocAIAAAAJ&hl=zh-CN">Wenxin Tai</a>, Zhenhui Li,
-   <a href="https://scholar.google.com/citations?user=Mdr0XDkAAAAJ&hl=en">Ting Zhong</a>,
- Guangqiang Yin, Yong Wang,
-   <a href="https://scholar.google.co.uk/citations?hl=zh-CN&user=Ihj2Rw8AAAAJ">Fan Zhou</a><br>
-      <strong>AAAI, 2024, CCF-A</strong>.
-
-  <p></p>
-      <em>Area: Geolocation, Sparsity, and Graph Neural Network.</em> <br>
-      <p></p>
-  <p>We provide a new view of geolocation through mitigating sparsity, which aims at enhancing contextual information utilization in social graph and network topology.</p>
-    </td>
-  </tr>
- </table>
-
-
-
-
-<!-- LSGAT--AAAIsa2024 -->
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-  <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
-    <td width="15%">
-      <img src='project/LSGAT/model.jpg'  width="300" height="120">
-    </td>
-    <td valign="top" width="75%">
- <strong>LSGAT: Interpreting Temporal Knowledge Graph Reasoning (Student Abstract)</strong>[<a href="https://drive.google.com/file/d/1ImUhgVkMv5C81vaafmy5OZgBbMWER7VD/view?usp=drive_link">Link</a>]<br>
-
- Bin Chen, <strong>Kai Yang</strong>,
- <a href="https://scholar.google.com/citations?user=YyxocAIAAAAJ&hl=zh-CN">Wenxin Tai</a>,
- <a href="https://scholar.google.com/citations?user=CU28LO0AAAAJ&hl=zh-CN&oi=ao">Zhangtao Cheng</a>,
- <a href="https://scholar.google.com/citations?user=0z9JmvMAAAAJ&hl=zh-CN&oi=ao">Leyuan Liu</a>,
-   <a href="https://scholar.google.com/citations?user=Mdr0XDkAAAAJ&hl=en">Ting Zhong</a>,
-   <a href="https://scholar.google.co.uk/citations?hl=zh-CN&user=Ihj2Rw8AAAAJ">Fan Zhou</a><br>
-      <strong>AAAI, 2024, CCF-A</strong>.
-
-  <p></p>
-      <em>Area: Event Prediction, Explainability, and Temporal Knowledge Graph.</em> <br>
-      <p></p>
-  <p>We provide an innovative method of event prediction, which not only exhibits remarkable precision in entity predictions but also enhances interpretability by identifying
-pivotal historical events influencing event predictions.</p>
-    </td>
-  </tr>
- </table>
-
-
-<!-- <p></p><p></p><p></p><p></p><p></p>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Under Review</heading>
-          <p>
-      <li> <strongsmall>[2024/3]</strongsmall> &nbsp;&nbsp;<smalll>Our work has been submitted to IEEE Transactions on Networking.</smalll><br/>
-
-          </p>
-        </td>
-      </tr>
-</table> -->
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Conference Presentation</heading>
-          <div style="line-height:25px">
-          <p>
-          <li> 2024 &nbsp The 49th IEEE International Conference on Acoustics, Speech, & Signal Processing (ICASSP) will be held in Seoul, Korea.<br/>
-           </p>
-          </div>
-        </td>
-      </tr>
-</table>
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Academic Service</heading>
-          <div style="line-height:25px">
-          <p>
-          <li> Reviewer: ICLR 2024; &nbsp AAAI 2024; &nbsp KDD 2024; &nbsp IEEE TKDE.<br/>
-          <li> IEEE Student Member.<br/>
-          </p>
-          </div>
-        </td>
-      </tr>
-</table>
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Teaching Experience</heading>
-          <div style="line-height:25px">
-          <p>
-          <li> 2022 &nbsp Teaching Assistant, with Prof. Wang, at UESTC.<br/>
-          </p>
-          </div>
-        </td>
-      </tr>
-</table>
-
-
-
-
- <center>
-
-
-  <p>
-
-    <font size="2">
-      <font size="2">
-        <font size="2">&nbsp;<br>
-          &nbsp; <a href="https://www.easycounter.com/">
-            <img src="https://www.easycounter.com/counter.php?hyson"
-            border="0" alt="Web Site Hit Counter"></a> <i>
-            <font face="Arial" size="2">unique visitors since November 2023</font>
-          </i></font>
-      </font>
-    </font>
-  </p>
-
-  <!-- <div style="text-align: center;">
-    <a href='https://mapmyvisitors.com/web/1bvpk' title='Visit tracker'>
-      <div style="max-width: 1000px; display: inline-block;">
-        <img src='https://mapmyvisitors.com/map.png?cl=ffffff&w=a&t=n&d=TDcB9raPuqJ-eLZ0BckorjJJPVj72v_xM2Z185oaJkY&co=2d78ad&ct=ffffff' style="max-width: 100%; max-width: 800px; height: auto;">
-      </div>
-    </a>
-  </div> -->
-
-  <p>
-    <center>
-     <div align="center" style="width:10%">
-     <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=tMTlRBMWywHJGidVeTWyg-8P3birgQ25AIqvBU6nAr4"></script>
-     </div>
-    </center>
-  </p>
-
-  <!-- <div style="text-align: center;"></div>
-  <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=700&t=n&d=TDcB9raPuqJ-eLZ0BckorjJJPVj72v_xM2Z185oaJkY&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
-  </div> -->
-
-
-
-  <p style="color: #AAAAAA;">© 2024 Kai Yang | Powered by <a href="https://jonbarron.info/">Jon Barron </a> and Patton Yu | updating time
-    2024-05-01
-    </p>
-  </center>
-  </body>
-
+</div>
+</body>
 </html>
-     
